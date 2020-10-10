@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>RGB Explorer</title> 
+  <link rel="stylesheet" type="text/css" href="style.css"> 
+ </head> 
+ <body> 
+  <div class="heading"> 
+   <h1><u>RGB EXPLORER</u></h1> 
+  </div> 
+  <div class="container"> 
+   <div class="form"> 
+    <form class="colorpicker" action="changecolor"> 
+     <label for="color" id="red">Select Red Value <input type="range" oninput="changecolor()" name="color" min="0" max="255" value="255" class="slider" id="redslider"> 
+      <div class="box redbox"> 
+       <center>
+        <div id="rval"></div> 
+       </center> 
+      </div> </label> 
+     <br> 
+     <label for="color" id="green">Select Green Value <input class="slider" id="greenslider" oninput="changecolor()" type="range" name="color" max="255" value="0"> 
+      <div class="box greenbox"> 
+       <center>
+        <div id="gval"></div> 
+       </center> 
+      </div> </label> 
+     <br> 
+     <label for="color" id="blue">Select Blue Value <input class="slider" id="blueslider" oninput="changecolor()" type="range" name="color" max="255" value="165"> 
+      <div class="box bluebox"> 
+       <center>
+        <div id="bval"></div> 
+       </center> 
+      </div> </label> 
+     <br> 
+    </form> 
+   </div> 
+  </div> 
+  <script type="text/javascript">
+    var rtext = document.getElementById('rval');
+    var gtext = document.getElementById('gval');
+    var btext = document.getElementById('bval');
+    rval = document.getElementById('redslider').value;
+    gval = document.getElementById('greenslider').value;
+    bval = document.getElementById('blueslider').value;
+    rtext.innerHTML = rval;
+    gtext.innerHTML = gval;
+    btext.innerHTML = bval;
+    function changecolor() {
+      var rtext = document.getElementById('rval');
+      var gtext = document.getElementById('gval');
+      var btext = document.getElementById('bval');
+      rval = document.getElementById('redslider').value;
+      gval = document.getElementById('greenslider').value;
+      bval = document.getElementById('blueslider').value;
+      body = document.getElementsByTagName('body');
+      rtext.innerHTML = rval;
+      gtext.innerHTML = gval;
+      btext.innerHTML = bval;
+      document.body.style.backgroundColor = 'rgb(' + rval + ',' + gval + ',' + bval + ')';
+    }
+
+  </script>  
+  <footer> 
+   <p class="programminghero">Learned and developed this site with <a href="http://www.programming-hero.com">Programming Hero</a></p> 
+  </footer>
+ </body>
+</html>
